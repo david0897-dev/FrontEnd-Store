@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    
+    <style>
+        @media (min-width: 1140px) {
+            html {
+                overflow-y: hidden;
+            }
+        }
+    </style>
+    
+    <title>Front End Store</title>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img class="header__logo" src="img/logo.png" alt="logotipo">
+        </a>
+    </header>
+
+    <nav class="nav">
+        <a class="nav__link" href="index.html">Tienda</a>
+        <a class="nav__link" href="nosotros.html">Nosotros</a>
+    </nav>
+
+    <main class="contenedor">
+        
+        <div class="flex">
+            
+            <img class="flex__img" src="img/3.jpg" alt="camiseta">
+            
+            <div class="flex__contenido">
+            
+                <h1 class="flex__titulo">ReactJS</h1>
+            
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenean luctus sapien mauris, vitae lacinia sapien imperdiet
+                    eget. Morbi ullamcorper elit a metus accumsan dapibus vel et
+                    nisl. Curabitur felis tellus. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Aenean luctus sapien mauris,
+                    vitae lacinia sapien imperdiet eget.
+                </p>
+                
+                <form class="formulario">
+
+                    <select class="formulario__select">
+                        <option disabled selected>-Seleccionar talla-</option>
+                        <option>Pequeña</option>
+                        <option>Mediana</option>
+                        <option>Grande</option>
+                    </select>
+
+                    <input class="formulario__cantidad" type="number" min="1" placeholder="Cantidad">
+                    <!--<input class="formulario__enviar" type="submit" value="Añadir al carrito">-->
+                    
+                    <button class="formulario__boton" type="submit">Añadir al carrito</button>
+
+                </form>
+            </div> <!-- cierre .flex__contenido -->
+        </div> <!-- cierre .flex -->
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">Front End Store - Todos los derechos reservados, 2022</p>
+    </footer>
+
+</body>
+</html>

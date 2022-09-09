@@ -1,0 +1,373 @@
+:root {
+    --primario: #005b96;
+    --primarioOscuro: #014d7d;
+    --secundario: #FFCE00;
+    --secundarioOscuro: rgb(233, 187, 2);
+    --blanco: #fff;
+    --negro: #000;
+
+    --fuentePrincipal: 'Staatliches', cursive;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:after, *:before {
+    box-sizing: inherit;
+}
+
+/* Globales */
+body {
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+
+h1 { font-size: 4rem; }
+h2 { font-size: 3.2rem; }
+h3 { font-size: 2.4rem; }
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo {
+    margin: 3rem;
+}
+
+.nav {
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    /* gap: 3rem; Forma nueva, Safari no tiene support*/
+}
+
+.nav__link {
+    font-family: var(--fuentePrincipal);
+    font-size: 3rem;
+    color: var(--blanco);
+    margin-right: 3rem;
+
+    transition: .3s;
+}
+
+.nav__link:last-of-type {
+    margin-right: 0;
+}
+
+.nav__link:hover,
+.nav__link--active {
+    transition: .3s;
+    color: var(--secundario);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__text {
+    font-family: var(--fuentePrincipal);
+    font-size: 2.2rem;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Productos */
+.grid {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 3.5rem;
+    margin: 0 auto;
+    width: 70%;
+}
+
+@media (min-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
+}
+
+@media (min-width: 1140px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.product {
+    background-color: var(--primarioOscuro);
+    text-align: center;
+    border-radius: .5rem;
+    padding: 1rem;
+
+    transition: .5s;
+}
+
+.product:hover {
+    transition: .3s;
+    transform: scale(1.02);
+    -webkit-box-shadow: 0px 8px 25px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 8px 25px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 8px 25px 0px rgba(0,0,0,0.75);
+}
+
+.product__name {
+    font-family: var(--fuentePrincipal);
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+.product__price {
+    font-family: var(--fuentePrincipal);
+    font-size: 2.5rem;
+    color: var(--secundario);
+    margin: 0;
+}
+
+.product__img {
+    border-radius: .5rem;
+}
+
+/* Imágenes del grid */
+.image {
+    min-height: 30rem;
+    background-position: center;
+    border-radius: 1rem;
+    size: auto;
+    display: none;
+    box-shadow: 15px 15px 0px 0px rgba(1,77,125,1);
+}
+
+.image--shirts {
+    background-image: url(../img/grafico1.jpg);
+}
+
+.image--node {
+    background-image: url(../img/grafico2.jpg);
+}
+
+@media (min-width: 480px) {
+    .image--shirts,
+    .image--node {
+        grid-column: 1 / 3;
+        display: block;
+    }
+
+    .image--node {
+        grid-row: 7 / 8;
+    }
+    
+    .image--shirts {
+        grid-row: 3 / 4;
+    }
+}
+
+@media (min-width: 1140px) {
+    .image--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+
+    .image--shirts {
+        grid-row: 2 / 3;
+    }
+}
+
+/* Nosotros */
+.nosotros {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.nosotros__contenido {
+    text-align: center;
+    margin: 0 1rem;
+}
+
+.nosotros__img {
+    grid-row: 1 / 2;
+    width: 100%;
+    margin: 0 auto 2rem auto;
+}
+
+@media (min-width: 480px) {
+    .nosotros__img {
+        width: 70%;
+        box-shadow: 15px 15px 0px 0px rgb(1,77,125);
+        border-radius: 1rem;
+    }
+}
+
+@media (min-width: 1140px) {
+    .nosotros {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 4rem;
+    }
+
+    .nosotros__img {
+        width: 100%;
+        grid-column: 2 / 3;
+    }
+}
+
+/* Bloques comprar */
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .bloques {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.bloque {
+    text-align: center;
+}
+
+.bloque__titulo {
+    margin: 0;
+}
+
+.bloque__img {
+    width: 100%;
+}
+
+.bloque__p {
+    font-size: 1.5rem;
+}
+
+.titulo {
+    margin-top: 5rem;
+}
+
+/* Página de producto */
+.flex {
+    display: flex;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.flex__img {
+    margin: 0 2rem 2rem 2rem;
+    max-width: 40rem;
+    max-height: 35rem;
+    border-radius: 1rem;
+    box-shadow: 15px 15px 0px 0px rgb(1,77,125);
+}
+
+@media (max-width: 768px) {
+    .flex {
+        flex-direction: column;
+    }
+    .flex__img{
+        margin: 0 auto 2rem auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .flex__img {
+        width: 80%;
+    }
+}
+
+
+.flex__contenido p {
+    margin: 3rem 10%;
+}
+
+@media (max-width: 480px) {
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+.formulario__select {
+    margin-right: 3rem;
+}
+
+.formulario__select,
+.formulario__cantidad {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+    padding: 1rem;
+    border: none;
+    box-shadow: 0px 0px 0px 5px var(--primarioOscuro);
+    background-color: var(--primario);
+    width: 18rem;
+}
+
+@media (max-width: 480px) {
+    .formulario__select,
+    .formulario__cantidad {
+        margin: 1rem auto;
+    }
+}
+
+
+.formulario__select:focus,
+.formulario__cantidad:focus {
+    outline: none;
+}
+
+.formulario__select option {
+    background-color: var(--blanco);
+    color: var(--negro);
+}
+
+.formulario__cantidad::placeholder {
+    color: var(--blanco);
+}
+
+.formulario__boton {
+    display: block;
+    font-family: var(--fuentePrincipal);
+    margin-top: 2rem;
+    padding: 1rem 10rem;
+    background-color: var(--secundario);
+    border: none;
+}
+
+@media (min-width: 480px) {
+    .formulario__boton {
+        margin: 2rem auto;
+        padding: 1rem 15rem;
+    }
+}
